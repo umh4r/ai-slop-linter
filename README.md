@@ -31,14 +31,15 @@
 
 ## 開発環境
 
-VS Code の Dev Containers を使う場合は、リポジトリを開いて「Reopen in Container」を選ぶ。
-コンテナ作成時に `uv sync --all-groups` が実行され、依存関係が `.venv` に導入される。
-
-ローカルで直接使う場合は uv を導入した上で次を実行する。
+uv を導入した上で次を実行すると、依存関係が `.venv` に導入される。
+Zed は `.venv` を自動検出する。
 
 ```sh
 uv sync --all-groups
 ```
+
+Dev Container（`.devcontainer/devcontainer.json`）も用意している。
+対応するツールで開くと、コンテナ作成時に同じ `uv sync --all-groups` が実行される。
 
 ## 使い方
 

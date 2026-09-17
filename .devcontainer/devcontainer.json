@@ -4,21 +4,5 @@
   "features": {
     "ghcr.io/va-h/devcontainers-features/uv:1": {}
   },
-  "postCreateCommand": "uv sync --all-groups",
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "ms-python.python",
-        "ms-python.mypy-type-checker",
-        "charliermarsh.ruff"
-      ],
-      "settings": {
-        "python.defaultInterpreterPath": "${containerWorkspaceFolder}/.venv/bin/python",
-        "[python]": {
-          "editor.defaultFormatter": "charliermarsh.ruff",
-          "editor.formatOnSave": true
-        }
-      }
-    }
-  }
+  "postCreateCommand": "uv sync --all-groups"
 }
