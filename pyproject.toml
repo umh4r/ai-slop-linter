@@ -1,0 +1,45 @@
+[project]
+name = "ai-slop-linter"
+version = "0.1.0"
+description = "日本語文書の校正用 lint ツール（ら抜き・い抜き・AI 特有語・冗長表現の検出）"
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+requires-python = ">=3.12"
+dependencies = [
+    "sudachipy>=0.6.11",
+    "sudachidict-core>=20260723",
+]
+
+[project.scripts]
+ai-slop-linter = "ai_slop_linter.cli:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.6",
+    "mypy>=1.10",
+]
+
+[build-system]
+requires = ["uv_build>=0.8.17,<0.9.0"]
+build-backend = "uv_build"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+packages = ["ai_slop_linter"]
+
+[[tool.mypy.overrides]]
+module = ["sudachipy", "sudachipy.*"]
+ignore_missing_imports = true

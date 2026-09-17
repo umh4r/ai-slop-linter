@@ -1,0 +1,8 @@
+{
+  "name": "ai-slop-linter",
+  "image": "mcr.microsoft.com/devcontainers/python:1-3.12-bookworm",
+  "features": {
+    "ghcr.io/va-h/devcontainers-features/uv:1": {}
+  },
+  "postCreateCommand": "uv sync --all-groups"
+}
